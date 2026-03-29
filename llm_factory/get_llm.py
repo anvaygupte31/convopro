@@ -19,7 +19,7 @@ def get_llm(model_name: str):
         return _current_llm_instance
 
     # If not, create a new instance and update the cache
-    llm_instance = Ollama(base_url=OLLAMA_URL, model=model_name)
+    llm_instance = Ollama(base_url=OLLAMA_URL, model=model_name, request_timeout=120)
     _current_model_name = model_name
     _current_llm_instance = llm_instance
 
